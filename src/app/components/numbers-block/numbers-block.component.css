@@ -1,0 +1,17 @@
+.block{
+  width: 150px;
+  height: 100px;
+  border-radius: 15px;
+  box-shadow: 0 0 8px rgba(37, 40, 43, 0.12);
+  margin: 15px;
+  padding: 5px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+}
+
+li {
+  margin-bottom: 10px;
+}

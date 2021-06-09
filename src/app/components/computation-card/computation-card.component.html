@@ -1,0 +1,38 @@
+<div class="card">
+  <h3>
+    {{title}}
+  </h3>
+  <mat-form-field class="example-full-width">
+    <mat-label>Number</mat-label>
+    <input type="number" matInput [(ngModel)]="inputNumber">
+  </mat-form-field>
+  <ng-container [ngSwitch]="type">
+    <div *ngSwitchCase="'prime'" class="card__footer">
+      <div *ngIf="prime$ | async as prime; else loading" class="prime">
+        <span [ngClass]="{'green': prime.isPrime}">
+          This number is {{ prime.isPrime ? '' : 'not' }} prime!
+        </span>
+      </div>
+      <ng-template #loading>
+        <ng-container *ngIf="prime$">
+          <mat-progress-bar mode="query"></mat-progress-bar>
+        </ng-container>
+      </ng-template>
+      <button mat-raised-button color="primary" (click)="checkIsPrime()">Check</button>
+    </div>
+    <div *ngSwitchDefault class="card__footer">
+      <div *ngIf="amountPrimes$ | async as amountObj; else loading" class="amount">
+        <span>
+          {{amountObj.amount}}
+        </span>
+      </div>
+      <ng-template #loading>
+        <ng-container *ngIf="amountPrimes$">
+          <mat-progress-bar mode="query"></mat-progress-bar>
+        </ng-container>
+      </ng-template>
+      <button mat-raised-button color="primary" (click)="checkCountOfPrime()">Check</button>
+    </div>
+  </ng-container>
+</div>
+

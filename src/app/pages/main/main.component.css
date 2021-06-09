@@ -1,0 +1,45 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.blocks {
+  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.users {
+  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+mat-expansion-panel {
+  margin-top: 20px;
+}
+
+mat-expansion-panel-header {
+  position: relative;
+}
+
+mat-expansion-panel-header.mat-expanded:before {
+  transform: rotate(225deg);
+  top: 15px;
+}
+
+mat-expansion-panel-header:before {
+  content: "";
+  position: absolute;
+  right: 25px;
+  width: 10px;
+  top: 15px;
+  height: 10px;
+  border-bottom: 3px solid rgba(0,0,0,.6);
+  border-right: 3px solid rgba(0,0,0,.6);
+  border-radius: 2px;
+  transform: rotate(45deg);
+  transition: all 0.2s ease;
+}

@@ -1,0 +1,39 @@
+<div class="cards">
+  <app-computation-card title="Check if a prime number" type="prime"></app-computation-card>
+  <app-computation-card title="Count of prime numbers in a range (approximate)" type="approximate"></app-computation-card>
+  <app-computation-card title="Count of prime numbers in a range (exact)" type="exact"></app-computation-card>
+</div>
+<div *ngIf="authService.getIsAuthorized() | async">
+  <div class="accordion">
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header >
+          <button class="button" mat-raised-button color="accent" (click)="loadBlocks()">Load Blocks</button>
+        </mat-expansion-panel-header>
+        <div *ngIf="!(allBlocks$ | async)">
+          <div *ngIf="allBlocks$">
+            <mat-progress-bar mode="query"></mat-progress-bar>
+          </div>
+        </div>
+        <div class="blocks" >
+          <app-numbers-block *ngFor="let block of allBlocks$ | async" [blockData]="block"></app-numbers-block>
+        </div>
+      </mat-expansion-panel>
+      <div *ngIf="(authService.getRole() | async) === 'ADMIN'">
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header >
+          <button class="button" mat-raised-button color="accent" (click)="loadUsers()">Load Users</button>
+        </mat-expansion-panel-header>
+        <div *ngIf="!(allUsers$ | async)">
+          <div *ngIf="allUsers$">
+            <mat-progress-bar mode="query"></mat-progress-bar>
+          </div>
+        </div>
+        <div class="users">
+          <app-user *ngFor="let user of allUsers$ | async" [userData]="user"></app-user>
+        </div>
+      </mat-expansion-panel>
+      </div>
+    </mat-accordion>
+  </div>
+</div>

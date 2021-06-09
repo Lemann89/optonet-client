@@ -1,0 +1,56 @@
+.card {
+  background-color: #FFFFFF;
+  height: 300px;
+  border-radius: 20px;
+  box-shadow: 0 0 8px rgba(37, 40, 43, 0.12);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+h3 {
+  color: #000000;
+  font-size: 24px;
+  height: 56px;
+}
+
+:host {
+  width: 28%;
+  margin: 30px 0;
+}
+
+button {
+  margin-top: auto;
+}
+
+mat-form-field {
+  margin-top: 10px;
+}
+
+.prime {
+  font-size: 22px;
+  margin: 32px 0;
+}
+
+.prime span {
+  color: #FB4E4E;
+}
+
+.prime span.green {
+  color: #2AC769;
+}
+
+.card__footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.amount {
+  margin-bottom: 32px;
+  font-size: 26px;
+}
+
+mat-progress-bar {
+  margin-bottom: 32px;
+}

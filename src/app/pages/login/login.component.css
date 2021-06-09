@@ -1,0 +1,17 @@
+.container {
+  max-width: 500px;
+  margin: 100px auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  margin-top: 20px;
+}

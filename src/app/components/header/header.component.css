@@ -1,0 +1,31 @@
+.logo span {
+  font-size: 20px;
+  color: #000000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.header {
+  box-shadow: 0 4px 20px hsl(0deg 0% 73% / 25%);
+  background-color: #FFFFFF;
+}
+
+.header__wrapper {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+}
+
+li {
+  margin-left: 20px;
+  font-size: 18px;
+}

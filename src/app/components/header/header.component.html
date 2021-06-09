@@ -1,0 +1,33 @@
+<div class="header">
+  <div class="container">
+    <div class="header__wrapper">
+      <div class="logo" routerLink="/">
+        <span>Optonet Client</span>
+      </div>
+      <nav>
+        <ul *ngIf="!(authService.getIsAuthorized() | async)">
+          <li>
+            <button routerLink="/login" mat-stroked-button color="primary" >
+              Log in
+            </button>
+          </li>
+          <li>
+            <button routerLink="/register" mat-stroked-button color="primary">
+              Register
+            </button>
+          </li>
+        </ul>
+        <ul *ngIf="authService.getIsAuthorized() | async">
+          <li>
+            Hello, <strong>{{authService.getRole() | async}}</strong>!
+          </li>
+          <li>
+            <button mat-stroked-button color="primary" (click)="authService.logout()">
+              Log Out
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
